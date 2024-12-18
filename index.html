@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Form Deflector Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 2rem;
+        }
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Support Request Form</h1>
+    <form id="supportForm">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="issueDescription">Describe Your Issue:</label>
+            <textarea id="issueDescription" name="issueDescription" rows="4" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<!-- Add Kapa Support Form Deflector Script -->
+<script type="text/javascript">
+(function () {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://widget.kapa.ai/kapa-support-form-deflector.bundle.js";
+    script.onload = function () {
+        window.KapaSupportFormDeflector.init({
+            integrationId: "1c3ca382-d3d4-4b25-bf3d-d28449e0cb10", // Integration ID
+            mainInputSelector: "issueDescription" // Main input field selector
+        });
+    };
+    document.body.appendChild(script);
+})();
+</script>
+
+</body>
+</html>
